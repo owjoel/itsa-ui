@@ -3,8 +3,8 @@ import { Navbar } from "./NavBar";
 
 export default function Admin() {
   return (
-    <main className="h-full">
-      <Navbar />
-    </main>
+    <div className="h-full">
+      What's up
+    </div>
   );
 }

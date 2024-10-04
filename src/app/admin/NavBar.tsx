@@ -1,76 +1,80 @@
-"use client"
+"use client";
 
-import { useState } from 'react';
-import { Center, Tooltip, UnstyledButton, Stack, rem } from '@mantine/core';
+import { useState } from "react";
+import { Group, Code } from "@mantine/core";
 import {
-  IconHome2,
-  IconGauge,
-  IconDeviceDesktopAnalytics,
+  IconDashboard,
   IconFingerprint,
-  IconCalendarStats,
-  IconUser,
+  IconKey,
   IconSettings,
-  IconLogout,
+  Icon2fa,
+  IconDatabaseImport,
+  IconTimeline,
   IconSwitchHorizontal,
-} from '@tabler/icons-react';
-// import { MantineLogo } from '@mantinex/mantine-logo';
-import classes from './Navbar.module.css';
+  IconLogout,
+  IconUser
+} from "@tabler/icons-react";
+import classes from "./Navbar.module.css";
 
-interface NavbarLinkProps {
-  icon: typeof IconHome2;
-  label: string;
-  active?: boolean;
-  onClick?(): void;
-}
-
-function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
-  return (
-    <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
-      <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
-        <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
-      </UnstyledButton>
-    </Tooltip>
-  );
-}
-
-const mockdata = [
-  { icon: IconHome2, label: 'Home' },
-  { icon: IconGauge, label: 'Dashboard' },
-  { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-  { icon: IconCalendarStats, label: 'Releases' },
-  { icon: IconUser, label: 'Account' },
-  { icon: IconFingerprint, label: 'Security' },
-  { icon: IconSettings, label: 'Settings' },
+const data = [
+  { link: "", label: "Dashboard", icon: IconDashboard },
+  { link: "", label: "Users", icon: IconUser },
+  { link: "", label: "Activity", icon: IconTimeline },
+  { link: "", label: "SSH Keys", icon: IconKey },
+  { link: "", label: "Databases", icon: IconDatabaseImport },
+  { link: "", label: "Authentication", icon: Icon2fa },
+  { link: "", label: "Settings", icon: IconSettings },
 ];
 
 export function Navbar() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState("Billing");
 
-  const links = mockdata.map((link, index) => (
-    <NavbarLink
-      {...link}
-      key={link.label}
-      active={index === active}
-      onClick={() => setActive(index)}
-    />
+  const links = data.map((item) => (
+    <a
+      className={classes.link}
+      data-active={item.label === active || undefined}
+      href={item.link}
+      key={item.label}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive(item.label);
+      }}
+    >
+      <item.icon className={classes.linkIcon} stroke={1.5} />
+      <span>{item.label}</span>
+    </a>
   ));
 
   return (
-    <nav className={`${classes.navbar} bg-black`}>
-      <Center>
-        {/* <MantineLogo type="mark" inverted size={30} /> */}
-      </Center>
-
+    <nav className={classes.navbar}>
       <div className={classes.navbarMain}>
-        <Stack justify="center" gap={0}>
-          {links}
-        </Stack>
+        <Group className={classes.header} justify="space-between">
+          <Code fw={700} className={classes.version}>
+            v3.1.2
+          </Code>
+        </Group>
+        {links}
       </div>
 
-      <Stack justify="center" gap={0}>
-        <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
-        <NavbarLink icon={IconLogout} label="Logout" />
-      </Stack>
+      <div className={classes.footer}>
+        <a
+          href="#"
+          className={classes.link}
+          onClick={(event) => event.preventDefault()}
+        >
+          <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
+          <span>Change account</span>
+        </a>
+
+        <a
+          href="#"
+          className={classes.link}
+          onClick={(event) => event.preventDefault()}
+        >
+          <IconLogout className={classes.linkIcon} stroke={1.5} />
+          <span>Logout</span>
+        </a>
+      </div>
     </nav>
   );
 }
