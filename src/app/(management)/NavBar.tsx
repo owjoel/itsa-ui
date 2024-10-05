@@ -15,34 +15,35 @@ import {
   IconUser
 } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
+import Link from "next/link";
 
 const data = [
-  { link: "", label: "Dashboard", icon: IconDashboard },
-  { link: "", label: "Users", icon: IconUser },
-  { link: "", label: "Activity", icon: IconTimeline },
-  { link: "", label: "SSH Keys", icon: IconKey },
-  { link: "", label: "Databases", icon: IconDatabaseImport },
-  { link: "", label: "Authentication", icon: Icon2fa },
-  { link: "", label: "Settings", icon: IconSettings },
+  { link: "/dashboard", label: "Dashboard", icon: IconDashboard },
+  { link: "/users", label: "Users", icon: IconUser },
+  { link: "/clients", label: "Clients", icon: IconTimeline },
+  { link: "/settings", label: "Settings", icon: IconSettings },
 ];
 
 export function Navbar() {
-  const [active, setActive] = useState("Billing");
+  const pathname = new URL(window.location.href).pathname;
+  const route = pathname.split('/')[1]
+  const selected = route.charAt(0).toUpperCase() + route.slice(1)
+  const [active, setActive] = useState(selected);
 
   const links = data.map((item) => (
-    <a
+    <Link
       className={classes.link}
       data-active={item.label === active || undefined}
       href={item.link}
       key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
-      }}
+      // onClick={(event) => {
+      //   event.preventDefault();
+      //   setActive(item.label);
+      // }}
     >
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>
-    </a>
+    </Link>
   ));
 
   return (
@@ -57,23 +58,23 @@ export function Navbar() {
       </div>
 
       <div className={classes.footer}>
-        <a
+        {/* <a
           href="#"
           className={classes.link}
           onClick={(event) => event.preventDefault()}
         >
           <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
           <span>Change account</span>
-        </a>
+        </a> */}
 
-        <a
+        <Link
           href="#"
           className={classes.link}
           onClick={(event) => event.preventDefault()}
         >
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
-        </a>
+        </Link>
       </div>
     </nav>
   );
