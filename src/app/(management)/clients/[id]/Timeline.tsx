@@ -258,24 +258,13 @@ export function Timeline() {
   ));
 
   return (
-    <Paper p="md" withBorder radius="md" style={{flexGrow: 1}} >
-        {/* <TextInput
-          placeholder="Search by any field"
-          mb="md"
-          leftSection={
-            <IconSearch
-              style={{ width: rem(16), height: rem(16) }}
-              stroke={1.5}
-            />
-          }
-          value={search}
-          onChange={handleSearchChange}
-        /> */}
-        <Table.ScrollContainer minWidth={600}>
+    <Paper p="md" withBorder radius="md" style={{ height: '100%`' , width:'50%'}}>
+        <Table.ScrollContainer minWidth={600} style={{ height:'100%',overflowY: 'auto' }}>
           <Table
             highlightOnHover
             horizontalSpacing="md"
             verticalSpacing="xs"
+            stickyHeader 
           >
             <Table.Thead>
               <Table.Tr>

@@ -22,8 +22,8 @@ export default function ClientProfile({ params }: { params: { id: string } }) {
       <Header />
       <Space h="md" />
 
-      <Flex>
-        <Edit />
+      <Flex style={{ height: '800px' }}>
+        <Edit/>
         <Timeline />
       </Flex>
     </div>

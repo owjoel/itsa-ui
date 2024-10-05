@@ -1,4 +1,4 @@
-import { Group, Paper, TextInput } from "@mantine/core";
+import { Group, Paper, Stack, TextInput } from "@mantine/core";
 import classes from "./Edit.module.css";
 
 const data = {
@@ -17,8 +17,8 @@ const data = {
 
 export function Edit() {
   return (
-    <Paper p="md" withBorder radius="md" style={{flexGrow: 1}}>
-      <Group style={{ width: "100%" }}>
+      <Paper p="md" withBorder radius="md" style={{ height:'100%' , width:'50%'}}>
+      <Stack style={{ width: "100%",paddingTop:'10px'}}>
         <TextInput
           label="First Name"
           placeholder="15329 Huston 21st"
@@ -85,7 +85,7 @@ export function Edit() {
           classNames={classes}
           value={data.postalCode}
         />
-      </Group>
+      </Stack>
     </Paper>
   );
 }
