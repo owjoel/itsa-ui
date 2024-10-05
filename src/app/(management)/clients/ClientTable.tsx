@@ -12,6 +12,7 @@ import {
   rem,
   keys,
   Badge,
+  Flex,
 } from "@mantine/core";
 import {
   IconSelector,
@@ -151,8 +152,8 @@ export function ClientTable() {
   ));
 
   return (
-    <>
-      <TextInput
+    <div>
+      {/* <TextInput
         placeholder="Search by any field"
         mb="md"
         leftSection={
@@ -163,8 +164,8 @@ export function ClientTable() {
         }
         value={search}
         onChange={handleSearchChange}
-      />
-      <Table.ScrollContainer minWidth={2000}>
+      /> */}
+      <Table.ScrollContainer minWidth={5}>
         <Table highlightOnHover horizontalSpacing="md" verticalSpacing="xs">
           <Table.Thead>
             <Table.Tr>
@@ -269,7 +270,7 @@ export function ClientTable() {
           </Table.Tbody>
         </Table>
       </Table.ScrollContainer>
-    </>
+    </div>
   );
 }
 

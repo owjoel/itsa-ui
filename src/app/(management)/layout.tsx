@@ -7,8 +7,11 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
     <main className="h-full">
       <Flex>
         <Navbar />
-        {children}
+        <div style={{ width: '100%', overflowX: 'auto' }}>
+          {children}
+        </div>
       </Flex>
+
     </main>
   );
 }
