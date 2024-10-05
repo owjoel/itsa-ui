@@ -31,7 +31,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MantineProvider theme={{ colorScheme: "dark" }}>
+        <MantineProvider defaultColorScheme={'dark'}>
           <div className="h-screen">{children}</div>
         </MantineProvider>
       </body>
