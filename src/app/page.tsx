@@ -1,5 +1,6 @@
 import { Container, Title, Text, Button } from '@mantine/core';
 import classes from './home.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              OnlyNotes
+              UBS CRM
             </Title>
 
             <Text className={classes.description} mt={30}>
@@ -16,6 +17,8 @@ export default function Home() {
             </Text>
 
             <Button
+              component={Link}
+              href="/auth"
               variant="gradient"
               size="xl"
               className={classes.control}
