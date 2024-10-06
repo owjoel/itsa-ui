@@ -21,69 +21,69 @@ export function Edit() {
       <Stack style={{ width: "100%",paddingTop:'10px'}}>
         <TextInput
           label="First Name"
-          placeholder="15329 Huston 21st"
+          placeholder="John"
           classNames={classes}
-          value={data.firstName}
+          defaultValue={data.firstName}
         />
         <TextInput
           label="Last Name"
-          placeholder="15329 Huston 21st"
+          placeholder="Smitthy"
           classNames={classes}
-          value={data.lastName}
+          defaultValue={data.lastName}
         />
         <TextInput
           label="Date Of Birth"
           placeholder="15329 Huston 21st"
           classNames={classes}
-          value={data.dateOfBirth}
+          defaultValue={data.dateOfBirth}
         />
         <TextInput
           label="Gender"
           placeholder="15329 Huston 21st"
           classNames={classes}
-          value={data.gender}
+          defaultValue={data.gender}
         />
         <TextInput
           label="Email"
           placeholder="15329 Huston 21st"
           classNames={classes}
-          value={data.email}
+          defaultValue={data.email}
         />
         <TextInput
           label="Phone Number"
           placeholder="15329 Huston 21st"
           classNames={classes}
-          value={data.phoneNumber}
+          defaultValue={data.phoneNumber}
         />
         <TextInput
           label="Address"
-          placeholder="15329 Huston 21st"
+          placeholder="81 Stamford Rd"
           classNames={classes}
-          value={data.address}
+          defaultValue={data.address}
         />
         <TextInput
           label="City"
-          placeholder="15329 Huston 21st"
+          placeholder="Singapore"
           classNames={classes}
-          value={data.city}
+          defaultValue={data.city}
         />
         <TextInput
           label="State"
-          placeholder="15329 Huston 21st"
+          placeholder="Singapore"
           classNames={classes}
-          value={data.state}
+          defaultValue={data.state}
         />
         <TextInput
           label="Country"
-          placeholder="15329 Huston 21st"
+          placeholder="Singapore"
           classNames={classes}
-          value={data.country}
+          defaultValue={data.country}
         />
         <TextInput
           label="Postal Code"
-          placeholder="15329 Huston 21st"
+          placeholder="694181"
           classNames={classes}
-          value={data.postalCode}
+          defaultValue={data.postalCode}
         />
       </Stack>
     </Paper>

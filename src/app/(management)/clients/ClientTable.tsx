@@ -18,6 +18,7 @@ import {
   IconSearch,
 } from "@tabler/icons-react";
 import classes from "./ClientTable.module.css";
+import Link from "next/link";
 
 interface RowData {
   clientID: string;
@@ -133,7 +134,7 @@ export function ClientTable() {
 
   const rows = sortedData.map((row) => (
     <Table.Tr key={row.clientID}>
-      <Table.Td>{row.clientID}</Table.Td>
+      <Table.Td><Link href={`/clients/${row.clientID}`} className="text-blue-600 hover:underline">{row.clientID}</Link></Table.Td>
       <Table.Td>{row.name}</Table.Td>
       <Table.Td>{row.dateOfBirth}</Table.Td>
       <Table.Td>{row.gender}</Table.Td>

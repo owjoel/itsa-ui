@@ -16,7 +16,7 @@ export default function ClientProfile({ params }: { params: { id: string } }) {
       <Header />
       <Space h="md" />
 
-      <Flex style={{ height: '800px' }}>
+      <Flex gap={15} style={{ height: '800px' }}>
         <Edit/>
         <Timeline />
       </Flex>
