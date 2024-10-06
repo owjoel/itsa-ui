@@ -3,12 +3,10 @@
 import { useState } from "react";
 import {
   Table,
-  ScrollArea,
   UnstyledButton,
   Group,
   Text,
   Center,
-  TextInput,
   rem,
   keys,
   Badge,
@@ -18,7 +16,6 @@ import {
   IconSelector,
   IconChevronDown,
   IconChevronUp,
-  IconSearch,
 } from "@tabler/icons-react";
 import classes from "./Timeline.module.css";
 
@@ -211,7 +208,7 @@ const data = [
 ];
 
 export function Timeline() {
-  const [search, setSearch] = useState("");
+  const [search] = useState("");
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
@@ -223,13 +220,13 @@ export function Timeline() {
     setSortedData(sortData(data, { sortBy: field, reversed, search }));
   };
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.currentTarget;
-    setSearch(value);
-    setSortedData(
-      sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
-    );
-  };
+  // const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { value } = event.currentTarget;
+  //   setSearch(value);
+  //   setSortedData(
+  //     sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
+  //   );
+  // };
 
   const getBadgeColor = (status: string) => {
     switch (status.toLowerCase()) {

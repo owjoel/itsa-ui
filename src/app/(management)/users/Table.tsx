@@ -158,10 +158,10 @@ export function TableSort() {
     );
   };
 
-  const toggleRow = (id: string) =>
-    setSelectedRows((current) =>
-      current.includes(id) ? current.filter((item) => item !== id) : [...current, id]
-    );
+  // const toggleRow = (id: string) =>
+  //   setSelectedRows((current) =>
+  //     current.includes(id) ? current.filter((item) => item !== id) : [...current, id]
+  //   );
   const toggleAll = () =>
     setSelectedRows((current) => (current.length === data.length ? [] : data.map((item) => item.userID)));
 

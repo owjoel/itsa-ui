@@ -7,8 +7,6 @@ import {
     Checkbox,
     Button,
     Title,
-    Text,
-    Anchor,
   } from "@mantine/core";
   import classes from "./Auth.module.css";
   

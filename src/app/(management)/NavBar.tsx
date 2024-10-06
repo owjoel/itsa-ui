@@ -4,13 +4,8 @@ import { useState } from "react";
 import { Group, Code } from "@mantine/core";
 import {
   IconDashboard,
-  IconFingerprint,
-  IconKey,
   IconSettings,
-  Icon2fa,
-  IconDatabaseImport,
   IconTimeline,
-  IconSwitchHorizontal,
   IconLogout,
   IconUser
 } from "@tabler/icons-react";
@@ -25,9 +20,12 @@ const data = [
 ];
 
 export function Navbar() {
-  const pathname = new URL(window.location.href).pathname;
-  const route = pathname.split('/')[1]
-  const selected = route.charAt(0).toUpperCase() + route.slice(1)
+  const pathname = (typeof window !== 'undefined') ? new URL(window.location.href).pathname : null;
+  let selected = "";
+  if (pathname) {
+    const route = pathname?.split('/')[1]
+    selected = route.charAt(0).toUpperCase() + route.slice(1)
+  }
   const [active, setActive] = useState(selected);
 
   const links = data.map((item) => (
@@ -36,10 +34,9 @@ export function Navbar() {
       data-active={item.label === active || undefined}
       href={item.link}
       key={item.label}
-      // onClick={(event) => {
-      //   event.preventDefault();
-      //   setActive(item.label);
-      // }}
+      onClick={() => {
+        setActive(item.label);
+      }}
     >
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>

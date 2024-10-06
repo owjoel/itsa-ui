@@ -1,4 +1,4 @@
-import { Group, Paper, Stack, TextInput } from "@mantine/core";
+import { Paper, Stack, TextInput } from "@mantine/core";
 import classes from "./Edit.module.css";
 
 const data = {

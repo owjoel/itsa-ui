@@ -1,15 +1,7 @@
 import {
-  Group,
-  Paper,
-  SimpleGrid,
   Space,
-  Text,
-  ThemeIcon,
   Title,
-  useMantineTheme,
 } from "@mantine/core";
-import { IconArrowDownRight, IconArrowUpRight } from "@tabler/icons-react";
-import classes from "./Stats.module.css";
 import { Stats } from "./Stats";
 import { DashboardTable } from "./Table";
 

@@ -1,5 +1,4 @@
-import { rem, Space, Text, TextInput, Title } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
+import { Space, Title } from "@mantine/core";
 import { TableSort } from "./Table";
 
 export default function Management() {

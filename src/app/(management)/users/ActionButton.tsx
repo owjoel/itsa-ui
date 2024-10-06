@@ -1,6 +1,5 @@
 import { ActionIcon, Menu, rem, useMantineTheme } from "@mantine/core";
 import {
-  IconChevronDown,
   IconDotsVertical,
   IconPencil,
   IconTrash,

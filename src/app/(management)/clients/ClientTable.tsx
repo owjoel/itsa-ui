@@ -3,7 +3,6 @@
 import { useState } from "react";
 import {
   Table,
-  ScrollArea,
   UnstyledButton,
   Group,
   Text,
@@ -11,7 +10,6 @@ import {
   TextInput,
   rem,
   keys,
-  Badge,
 } from "@mantine/core";
 import {
   IconSelector,
@@ -118,20 +116,20 @@ export function ClientTable() {
     );
   };
 
-  const getBadgeColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case "success":
-        return "green";
-      case "pending":
-        return "blue";
-      case "failed":
-        return "red";
-      case "active":
-        return "yellow";
-      default:
-        return "white";
-    }
-  };
+  // const getBadgeColor = (status: string) => {
+  //   switch (status.toLowerCase()) {
+  //     case "success":
+  //       return "green";
+  //     case "pending":
+  //       return "blue";
+  //     case "failed":
+  //       return "red";
+  //     case "active":
+  //       return "yellow";
+  //     default:
+  //       return "white";
+  //   }
+  // };
 
   const rows = sortedData.map((row) => (
     <Table.Tr key={row.clientID}>
